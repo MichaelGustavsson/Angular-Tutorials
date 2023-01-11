@@ -1,0 +1,26 @@
+<article class="page">
+  <h1 class="page-title">Våra bilar i lager</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tillverkare</th>
+        <th>Modell</th>
+        <th>Modell År</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehicle of vehicles" (click)="onSelected(vehicle)">
+        <td>{{ vehicle.manufacturer }}</td>
+        <td>{{ vehicle.model }}</td>
+        <td>{{ vehicle.modelYear }}</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+
+<hr />
+
+<article class="container">
+  <app-vehicle-details></app-vehicle-details>
+</article>
