@@ -1,0 +1,14 @@
+<article *ngIf="vehicle" class="vehicle-detail">
+  <h1 class="page-title">
+    Information om {{ vehicle.manufacturer }} {{ vehicle.model }}
+  </h1>
+  <img src="assets/images/{{ vehicle.imageUrl }}" alt="" />
+  <section class="vehicle-description">
+    <div>Årsmodell {{ vehicle.modelYear }}</div>
+    <div>Antal km {{ vehicle.mileage }}</div>
+    <h2>{{ vehicle.value }}</h2>
+    <hr />
+    <h4>Beskrivning</h4>
+    <p>{{ vehicle.description }}</p>
+  </section>
+</article>
