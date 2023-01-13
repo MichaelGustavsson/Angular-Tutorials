@@ -1,0 +1,95 @@
+<section class="page">
+  <h1 class="page-title">Lägg till bil</h1>
+  <form
+    #vehicleForm="ngForm"
+    (ngSubmit)="onSave()"
+    class="shadow"
+    method="post"
+  >
+    <div class="form-control">
+      <label for="regno">Registreringsnummer</label>
+      <input
+        id="regno"
+        type="text"
+        required
+        name="registrationNumber"
+        #regNo="ngModel"
+        [(ngModel)]="vehicle.registrationNumber"
+      />
+      <span [hidden]="regNo.valid || regNo.pristine" class="error"
+        >Registreringsnummer måste anges</span
+      >
+    </div>
+    <div class="form-control">
+      <label for="make">Märke</label>
+      <input
+        id="make"
+        type="text"
+        required
+        name="manufacturer"
+        #make="ngModel"
+        [(ngModel)]="vehicle.manufacturer"
+      />
+      <span [hidden]="make.valid || make.pristine" class="error"
+        >Märke måste anges</span
+      >
+    </div>
+    <div class="form-control">
+      <label for="model">Modell</label>
+      <input
+        id="model"
+        type="text"
+        required
+        name="model"
+        #model="ngModel"
+        [(ngModel)]="vehicle.model"
+      />
+      <span [hidden]="model.valid || model.pristine" class="error"
+        >Modell måste anges</span
+      >
+    </div>
+    <div class="form-control">
+      <label for="modelYear">Modell År</label>
+      <input
+        id="modelYear"
+        type="text"
+        required
+        name="modelYear"
+        #modelYear="ngModel"
+        [(ngModel)]="vehicle.modelYear"
+      />
+      <span [hidden]="modelYear.valid || modelYear.pristine" class="error"
+        >Model år måste anges</span
+      >
+    </div>
+    <div class="form-control">
+      <label for="mileage">Antal km</label>
+      <input
+        id="mileage"
+        type="text"
+        required
+        name="mileage"
+        #mileage="ngModel"
+        [(ngModel)]="vehicle.mileage"
+      />
+      <span [hidden]="mileage.valid || mileage.pristine" class="error"
+        >Antal km måste anges</span
+      >
+    </div>
+    <div class="form-control">
+      <div class="buttons-container">
+        <button
+          [disabled]="!vehicleForm.valid"
+          type="Submit"
+          class="btn btn-primary"
+        >
+          <i class="fa-sharp fa-solid fa-floppy-disk"></i> Spara
+        </button>
+        <a routerLink="/fordon" class="btn btn-warning"
+          ><i class="fa-solid fa-arrow-left"></i> Avbryt</a
+        >
+      </div>
+    </div>
+    {{ vehicle | json }}
+  </form>
+</section>
